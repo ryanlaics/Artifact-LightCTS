@@ -7,7 +7,7 @@ Welcome to the artifact documentation for our paper, **LightCTS: A Lightweight F
 
 **Authors:** Zhichen Lai, Dalin Zhang*, Huan Li*, Christian S. Jensen, Hua Lu, Yan Zhao
 
-**Paper:** [LightCTS: A Lightweight Framework for Correlated Time Series Forecasting](https://dl.acm.org/doi/10.1145/3589270)
+**Paper Link:** [LightCTS: A Lightweight Framework for Correlated Time Series Forecasting](https://dl.acm.org/doi/10.1145/3589270)
 
 ## Hardware information
 We trained all models on a server with an NVIDIA Tesla P100 GPU. Additionally, we tested the models' inferencing performance on an x86 device with a 380 MHz CPU to emulate resource-restricted environments.
