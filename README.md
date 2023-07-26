@@ -10,7 +10,7 @@ Welcome to the artifact documentation for our paper, **LightCTS: A Lightweight F
 **Paper Link:** [LightCTS: A Lightweight Framework for Correlated Time Series Forecasting](https://dl.acm.org/doi/10.1145/3589270)
 
 ## Hardware information
-We trained all models on a server with an NVIDIA Tesla P100 GPU. Additionally, we conducted some experiments on an x86 device with a 380 MHz CPU to emulate resource-restricted environments.
+We trained all models on a server with an NVIDIA Tesla P100 GPU. Additionally, we conducted some inference experiments on an x86 device with a 380 MHz CPU to emulate resource-restricted environments.
 
 ## Library Dependencies
 We developed the code for experiments using Python 3.7.13 and PyTorch 1.13.0. You can install PyTorch following the instructions on the [PyTorch website](https://pytorch.org/get-started/locally/), tailored to your specific operating system, CUDA version, and computing platform. For example:
