@@ -32,7 +32,7 @@ pip install git+https://github.com/facebookresearch/fvcore.git
 ```
 
 ## Dataset Preparation
-We tested LightCTS on four public multi-step correlated time series forecasting datasets and two public single-step correlated time series forecasting datasets. 
+We tested LightCTS on four public multi-step correlated time series forecasting datasets and two public single-step correlated time series forecasting datasets.
 
 **Multi-Step Datasets:**
 
@@ -64,7 +64,7 @@ data
 
 ## Reproducing Experiments
 
-This section provides detailed steps to reproduce the multi-step and single-step forecasting experiments from our paper. 
+This section provides detailed steps to reproduce the multi-step and single-step forecasting experiments from our paper.
 
 ### Multi-Step Forecasting Experiments
 
@@ -84,7 +84,7 @@ After the training phase concludes, a log summarizing the best model's performan
 On average: Test MAE: ..., Test MAPE: ..., Test RMSE: ...
 ```
 
-##### Model Testing (optional)
+##### Model Testing
 ```bash
 python Multi-step/Traffic Flow/$DATASET_NAME/test_$DATASET_NAME.py --device='cuda:0' --checkpoint=$CKPT_PATH
 #python Multi-step/Traffic Flow/PEMS04/test_PEMS04.py --device='cuda:0' --checkpoint='./checkpoint.pth'
@@ -144,7 +144,7 @@ On average: Test MAE: ..., Test MAPE: ..., Test RMSE: ...
 
 Here, Horizon 3, Horizon 6, and Horizon 12 correspond to '15 mins', '30 mins', and '60 mins' in Table 6, respectively.
 
-##### Model Testing (optional)
+##### Model Testing
 ```bash
 python Multi-step/Traffic Speed/$DATASET_NAME/test_$DATASET_NAME.py --device='cuda:0' --checkpoint=$CKPT_PATH
 #python Multi-step/Traffic Speed/METR-LA/test_METR-LA.py --device='cuda:0' --checkpoint='./checkpoint.pth'
@@ -192,7 +192,7 @@ After the training phase concludes, a log summarizing the best model's performan
 On average: Test RRSE: ..., Test CORR ...
 ```
 
-##### Model Testing (optional)
+##### Model Testing
 ```bash
 python Single-step/$DATASET_NAME/test_$DATASET_NAME.py --horizon=3 --device='cuda:0' --checkpoint=$CKPT_PATH
 #python Single-step/Solar/test_Solar.py --horizon=3 --device='cuda:0' --checkpoint='./save.pt'
@@ -217,6 +217,23 @@ A similar log like the above traffic flow forecasting's lightness metrics will a
 In the above commands, replace `$DATASET_NAME` with either `Solar` or `Electricity`, and `$CKPT_PATH` with the path to the desired saved checkpoint. Update `--horizon` to the target future horizons, which are [3, 6, 12, 24] in Table 7, and update  `--device` in the command line to suit your hardware.
 
 Please note that during the training process, the saved checkpoints will be stored in the '/logs' directory within each dataset's directory.
+
+## Figure Drawing
+After gathering the metrics results of each dataset, you can follow the instructions to draw the figures in the paper.
+First, please install the library, Matplotlib, for figure drawing:
+```bash
+pip install matplotlib
+```
+Then, move to the `Figure_drawing`, modify the metrics results in the file, and then run the code to draw the figure.
+```bash
+python Figure_drawing/Figure_$FIGURE_$SUBFIGURE_drawing.py
+#python Figure_drawing/Figure_5_a_drawing.py
+#python Figure_drawing/Figure_6_b_drawing.py
+```
+In the above commands, replace `$FIGURE` and `$SUBFIGURE` with the number of Figure and Subfigure.
+
+## Pretrained Models
+If you prefer to skip the training process and directly access the pre-trained checkpoints for reproduction, we have provided a version of the codebase [here](https://github.com/AI4CTS/lightcts). This version is optimized for better execution of the pre-trained checkpoints.
 
 ## Contact
 For any inquiries, please reach out to Zhichen Lai at zhla@cs.aau.dk.
