@@ -50,6 +50,17 @@ We tested LightCTS on four public multi-step correlated time series forecasting 
 | Solar     | Solar Power Production  | [download](https://drive.google.com/file/d/1TP6xDPXmf923YdhdRPdD1VwqtLATQqkS/view?usp=drive_link) |
 | Electricity| Electricity Consumption | [download](https://drive.google.com/file/d/1x9nBW-RAXrubHCWeG6JLMtUaXl2iQznX/view?usp=drive_link) |
 
+To download all the datasets in one run, please follow these instructions:
+Install the download library `gdown`:
+
+```bash
+pip install gdown
+```
+Run the script to download all the datasets:
+```bash
+python data_downloading.py
+```
+
 After downloading the datasets, move them to the '\data' directory. The directory structure should appear as follows:
 
 ```text
