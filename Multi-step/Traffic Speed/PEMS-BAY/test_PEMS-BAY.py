@@ -46,6 +46,8 @@ def main():
     model = engine.model
     # Move the model to the device
     model.to(device)
+    # *******Load the checkpoint for model testing
+    model.load_state_dict(torch.load(args.checkpoint))
 
     model.eval()
     outputs = []
