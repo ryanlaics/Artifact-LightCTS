@@ -9,12 +9,12 @@ x = np.array([1,2,4,8])
 markers = ['o', 's', 'v', '^']
 
 # Y-axis values for the four subplots
-y1 = [np.random.rand(5) * 10 for _ in range(4)]  # RRSE for 4 horizons
-y2 = [np.random.rand(5) * 10 for _ in range(4)]  # CORR for 4 horizons
-y3 = np.random.rand(5) * 1e8  # FLOPs
-y3_2 = np.random.rand(5) * 1e6  # Param
-y4 = np.random.rand(5) * 1e7  # Latency
-y4_2 = np.random.rand(5) * 1e5  # Peak Mem
+y1 = [np.random.rand(4) * 10 for _ in range(4)]  # RRSE for 4 horizons
+y2 = [np.random.rand(4) * 10 for _ in range(4)]  # CORR for 4 horizons
+y3 = np.random.rand(4) * 1e8  # FLOPs
+y3_2 = np.random.rand(4) * 1e6  # Param
+y4 = np.random.rand(4) * 1e7  # Latency
+y4_2 = np.random.rand(4) * 1e5  # Peak Mem
 
 # Style adjustments
 plt.style.use('default')
