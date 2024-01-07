@@ -86,7 +86,6 @@ To replicate the multi-step traffic flow forecasting experiments presented in Ta
 ```bash
 python Multi-step/Traffic Flow/$DATASET_NAME/train_$DATASET_NAME.py --device='cuda:0'
 #python Multi-step/Traffic Flow/PEMS04/train_PEMS04.py --device='cuda:0'
-#python Multi-step/Traffic Flow/PEMS08/train_PEMS08.py --device='cpu'
 ```
 
 After the training phase concludes, a log summarizing the best model's performance on the test set will appear:
@@ -99,7 +98,7 @@ On average: Test MAE: ..., Test MAPE: ..., Test RMSE: ...
 ```bash
 python Multi-step/Traffic Flow/$DATASET_NAME/test_$DATASET_NAME.py --device='cuda:0' --checkpoint=$CKPT_PATH
 #python Multi-step/Traffic Flow/PEMS04/test_PEMS04.py --device='cuda:0' --checkpoint='./checkpoint.pth'
-#python Multi-step/Traffic Flow/PEMS08/test_PEMS08.py --device='cpu' --checkpoint='./checkpoint.pth'
+#python Multi-step/Traffic Flow/PEMS08/test_PEMS08.py --device='cuda:0' --checkpoint='./checkpoint.pth'
 ```
 
 After the testing phase concludes, a log summarizing the tested model's performance will appear:
@@ -129,7 +128,7 @@ Upon completion, a log like the foolowing one will display the number of paramet
 ...
 ```
 
-In the above commands, replace `$DATASET_NAME` with either `PEMS04` or `PEMS08`, and `$CKPT_PATH` with the path to the desired saved checkpoint. Adjust the `--device` option in the command line according to your available hardware. Note that the lightness metrics calculation only runs on CPU, so we set the device to 'cpu' by default.
+In the above commands, replace `$DATASET_NAME` with either `PEMS04` or `PEMS08`, and `$CKPT_PATH` with the path to the desired saved checkpoint. Adjust the `--device` option in the command line according to your available hardware. 
 
 ### Traffic Speed Forecasting Experiments
 To reproduce the multi-step traffic speed forecasting experiments presented in Table 6 of the paper, follow these instructions:
@@ -138,7 +137,7 @@ To reproduce the multi-step traffic speed forecasting experiments presented in T
 ```bash
 python Multi-step/Traffic Speed/$DATASET_NAME/train_$DATASET_NAME.py --device='cuda:0'
 #python Multi-step/Traffic Speed/METR-LA/train_METR-LA.py --device='cuda:0'
-#python Multi-step/Traffic Speed/PEMS-BAY/train_PEMS-BAY.py --device='cpu'
+#python Multi-step/Traffic Speed/PEMS-BAY/train_PEMS-BAY.py --device='cuda:0'
 ```
 
 After the training phase concludes, a log summarizing the best model's performance on the test set will appear:
@@ -194,7 +193,7 @@ To replicate the single-step forecasting experiments presented in Table 7 of the
 ```bash
 python Single-step/$DATASET_NAME/train_$DATASET_NAME.py --horizon=3 --device='cuda:0'
 #python Single-step/Solar/train_Solar.py --horizon=3 --device='cuda:0'
-#python Single-step/Electricity/train_Electricity.py --horizon=3 --device='cpu'
+#python Single-step/Electricity/train_Electricity.py --horizon=3 --device='cuda:0'
 ```
 
 After the training phase concludes, a log summarizing the best model's performance on the test set will appear:
@@ -207,7 +206,7 @@ On average: Test RRSE: ..., Test CORR ...
 ```bash
 python Single-step/$DATASET_NAME/test_$DATASET_NAME.py --horizon=3 --device='cuda:0' --checkpoint=$CKPT_PATH
 #python Single-step/Solar/test_Solar.py --horizon=3 --device='cuda:0' --checkpoint='./save.pt'
-#python Single-step/Electricity/test_Electricity.py --horizon=3 --device='cpu' --checkpoint='./save.pt'
+#python Single-step/Electricity/test_Electricity.py --horizon=3 --device='cuda:0' --checkpoint='./save.pt'
 ```
 
 After the testing phase concludes, a log summarizing the tested model's performance will appear:
