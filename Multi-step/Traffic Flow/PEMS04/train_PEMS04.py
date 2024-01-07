@@ -20,16 +20,14 @@ parser.add_argument('--nglf',type=float,default=4,help='number of GLFormer')
 parser.add_argument('--group',type=float,default=4,help='group number')
 parser.add_argument('--print_every',type=int,default=1000,help='print frequency of training logs')
 parser.add_argument('--save',type=str,default='logs/',help='save path')
-parser.add_argument('--adj_mx',type=str,default='/data/cs.aau.dk/dalinz/0314/PEMS04/PEMS04.csv',help='path to the spatial adjacency matrix')
-parser.add_argument('--cts_data',type=str,default='/data/cs.aau.dk/dalinz/0314/PEMS04/PEMS04.npz',help='path to the CTS data')
-# parser.add_argument('--adj_mx',type=str,default='../../../data/PEMS04/PEMS04.csv',help='path to the spatial adjacency matrix')
-# parser.add_argument('--cts_data',type=str,default='../../../data/PEMS04/PEMS04.npz',help='path to the CTS data')
+parser.add_argument('--adj_mx',type=str,default='../../../data/PEMS04/PEMS04.csv',help='path to the spatial adjacency matrix')
+parser.add_argument('--cts_data',type=str,default='../../../data/PEMS04/PEMS04.npz',help='path to the CTS data')
 parser.add_argument('--expid',type=int,default=0,help='experiment id')
 args = parser.parse_args()
 
 # Define the main function where the model training and evaluation will happen
 def main():
-    # Set the device for computation (CPU or GPU)
+    # Set the device for computation
     device = torch.device(args.device)
     # Get the adjacency matrix of the graph, which represents the connection of the nodes
     adj_mx = util.get_adj_matrix(args.adj_mx, 307)
