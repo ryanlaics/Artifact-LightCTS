@@ -8,7 +8,7 @@ import numpy as np
 
 # Define the command line arguments that the script expects
 parser = argparse.ArgumentParser()
-parser.add_argument('--device',type=str,default='cuda:3',help='device for computation')
+parser.add_argument('--device',type=str,default='cuda:0',help='device for computation')
 parser.add_argument('--seq_length',type=int,default=12,help='prediction horizon')
 parser.add_argument('--nhid',type=int,default=64,help='embedding size')
 parser.add_argument('--in_dim',type=int,default=1,help='inputs dimension')
