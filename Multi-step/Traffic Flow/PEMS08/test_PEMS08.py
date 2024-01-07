@@ -29,7 +29,7 @@ parser.add_argument('--checkpoint',type=str,default=None)
 args = parser.parse_args()
 
 def main():
-    # Set the device for computation (CPU or GPU)
+    # Set the device for computation
     device = torch.device(args.device)
     # Get the adjacency matrix of the graph, which represents the connection of the nodes
     adj_mx = util.get_adj_matrix(args.adj_mx, 170)
