@@ -29,7 +29,7 @@ args = parser.parse_args()
 
 # Define the main function where the model training and evaluation will happen
 def main():
-    # Set the device for computation (CPU or GPU)
+    # Set the device for computation
     device = torch.device(args.device)
     # Get the adjacency matrix of the graph, which represents the connection of the nodes
     sensor_ids, sensor_id_to_ind, adj_mx = util.load_adj(args.adj_mx)
